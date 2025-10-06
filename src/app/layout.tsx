@@ -7,6 +7,8 @@ import { NavBar } from "@/components/NavBar";
 import { createClient } from "@/prismicio";
 import { isFilled } from "@prismicio/client";
 import { ViewTransitions } from "next-view-transitions";
+import { PrismicPreview } from "@prismicio/next";
+import { repositoryName } from "@/prismicio";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -47,7 +49,6 @@ export default async function RootLayout({
 
   return (
     <ViewTransitions>
-
       <html lang="en">
         <body
           className={`${raleway.variable} ${gambarino.variable}  antialiased bg-neutral-900 text-neutral-100`}
@@ -58,6 +59,7 @@ export default async function RootLayout({
           </main>
           <Footer />
         </body>
+        <PrismicPreview repositoryName={repositoryName} />
       </html>
     </ViewTransitions>
   );
